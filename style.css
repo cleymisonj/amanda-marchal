@@ -381,7 +381,17 @@ a {
     font-weight: 300;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 48px;
+    margin-bottom: 12px;
+}
+
+.hero-oab {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 36px;
     font-style: italic;
     animation: fadeInUp 1s ease-out 0.5s both;
 }
@@ -547,8 +557,22 @@ a {
     font-weight: 500;
     font-style: italic;
     color: var(--burgundy);
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     line-height: 1.5;
+}
+
+.about-oab {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    background: rgba(201, 168, 76, 0.1);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .about-text p {
@@ -1044,6 +1068,234 @@ a {
 
     .map-modal-footer {
         padding: 16px;
+    }
+}
+
+/* =============================================
+   FAQ SECTION
+   ============================================= */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+}
+
+.faq-question span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cream);
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover span {
+    color: var(--gold);
+}
+
+.faq-chevron {
+    flex-shrink: 0;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+    color: rgba(250, 247, 242, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    padding-right: 2.5rem;
+}
+
+.faq-answer strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .faq-question span {
+        font-size: 1.1rem;
+    }
+
+    .faq-question {
+        padding: 1.25rem 0;
+    }
+
+    .faq-answer p {
+        padding-right: 0;
+        font-size: 0.9rem;
+    }
+}
+
+/* =============================================
+   COOKIE BANNER
+   ============================================= */
+
+.cookie-banner {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: bottom 0.5s ease;
+}
+
+.cookie-banner.active {
+    bottom: 0;
+}
+
+.cookie-content {
+    background: var(--burgundy-dark);
+    border-top: 2px solid var(--gold);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+.cookie-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+}
+
+.cookie-text svg {
+    flex-shrink: 0;
+    color: var(--gold);
+    margin-top: 2px;
+}
+
+.cookie-text p {
+    font-size: 0.85rem;
+    color: rgba(250, 247, 242, 0.85);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cookie-text a {
+    color: var(--gold);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.cookie-text a:hover {
+    color: #e0c56a;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.cookie-btn-accept {
+    background: var(--gold);
+    color: var(--burgundy-dark);
+    border: none;
+    padding: 8px 24px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.cookie-btn-accept:hover {
+    background: #e0c56a;
+}
+
+.cookie-btn-decline {
+    background: transparent;
+    color: rgba(250, 247, 242, 0.6);
+    border: 1px solid rgba(250, 247, 242, 0.2);
+    padding: 8px 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cookie-btn-decline:hover {
+    color: var(--cream);
+    border-color: rgba(250, 247, 242, 0.5);
+}
+
+/* Footer privacy link */
+.footer-privacy-link {
+    color: var(--gold) !important;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-privacy-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+    }
+
+    .cookie-text {
+        gap: 8px;
+    }
+
+    .cookie-text svg {
+        display: none;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+    }
+
+    .cookie-btn-accept,
+    .cookie-btn-decline {
+        flex: 1;
+        text-align: center;
     }
 }
 
